@@ -21,7 +21,7 @@ forked from [zhetengbiji/copilot-for-hbuilderx](https://github.com/zhetengbiji/c
 
 ## 使用方式
 
-1. 从 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241)下载并导入本插件。
+1. 从 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=16504)下载并导入本插件。
 2. 编辑配置模板 bus-hosts.json 到对应目录
 
 > win:    C:\Users\user\AppData\Local\github-copilot\bus-hosts.json
@@ -72,9 +72,9 @@ forked from [zhetengbiji/copilot-for-hbuilderx](https://github.com/zhetengbiji/c
 
 可以通过以下任意方式激励来加速本项目的发展：
 
-* 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241) 下载本插件或真心评价。
+* 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=16504) 下载本插件或真心评价。
 * 在 [GitHub 开源仓库](https://github.com/zhetengbiji/copilot-for-hbuilderx) 给予 Star 或贡献有效代码。
-* 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241) 进行赞助。
+* 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=16504) 进行赞助。
 
 ## 沟通交流
 
@@ -82,8 +82,8 @@ forked from [zhetengbiji/copilot-for-hbuilderx](https://github.com/zhetengbiji/c
 
 <table>
 <tr>
-<td><img src="./assets/wechat1.jpg" style="height:200px"></img></td>
-<td><img src="./assets/wechat2.jpg" style="height:200px"></img></td>
+<td><img src="https://github.com/CcSimple/copilot-for-hbuilderx/raw/main/assets/wechat1.jpg" style="height:200px"></img></td>
+<td><img src="https://github.com/CcSimple/copilot-for-hbuilderx/raw/main/assets/wechat2.jpg" style="height:200px"></img></td>
 </tr>
 <tr>
 <td style="text-align:center">微信</td>
