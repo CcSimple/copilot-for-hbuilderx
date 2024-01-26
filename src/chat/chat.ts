@@ -52,7 +52,7 @@ function getGithubToken() {
   if (!githubToken) {
     const home = os.homedir()
     // ~/.config/github-copilot/hosts.json
-    let hostsFile = path.join(home, '.config', 'github-copilot', 'hosts.json')
+    let hostsFile = path.join(home, '.config', 'github-copilot', 'bus-hosts.json')
     if (!fs.existsSync(hostsFile)) {
       // C:\Users\user\AppData\Local\github-copilot\hosts.json
       hostsFile = path.join(
@@ -60,7 +60,7 @@ function getGithubToken() {
         'AppData',
         'Local',
         'github-copilot',
-        'hosts.json',
+        'bus-hosts.json',
       )
       if (!fs.existsSync(hostsFile)) {
         throw new Error('获取 GitHub Token 文件失败')
@@ -211,7 +211,7 @@ export async function chat(input?: string) {
   outputChannel.append('')
   const messages: Chat[] = []
   const config = vscode.workspace.getConfiguration()
-  const role = config.get<string>('GithubCopilot.chat.role', 'copilot')
+  const role = config.get<string>('GithubCopilotBus.chat.role', 'copilot')
   if (role === 'copilot') {
     messages.push({
       content: COPILOT_INSTRUCTIONS,

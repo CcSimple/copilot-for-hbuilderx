@@ -1,20 +1,20 @@
 {
-  "id": "copilot-for-hbuilderx",
-  "name": "copilot-for-hbuilderx",
+  "id": "copilot-for-hbuilderx-bus",
+  "name": "copilot-for-hbuilderx-bus",
   "description": "Your AI pair programmer",
-  "displayName": "GitHub Copilot",
-  "version": "0.7.3",
-  "publisher": "zhetengbiji",
+  "displayName": "GitHub Copilot BUS",
+  "version": "0.0.1",
+  "publisher": "CcSimple",
   "license": "GPL-3.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhetengbiji/copilot-for-hbuilderx.git"
+    "url": "git+https://github.com/CcSimple/copilot-for-hbuilderx.git"
   },
   "bugs": {
-    "url": "https://github.com/zhetengbiji/copilot-for-hbuilderx/issues"
+    "url": "https://github.com/CcSimple/copilot-for-hbuilderx/issues"
   },
-  "homepage": "https://github.com/zhetengbiji/copilot-for-hbuilderx#readme",
+  "homepage": "https://github.com/CcSimple/copilot-for-hbuilderx#readme",
   "engines": {
     "HBuilderX": "^3.8.5",
     "vscode": "^1.75.0",
@@ -52,11 +52,12 @@
   ],
   "scripts": {
     "vscode:prepublish": "npm run build",
-    "prepack": "npm run build",
+    "prepack": "npm run build2",
     "postpack": "node scripts/zip.js",
     "lint": "eslint --ext .ts src/**/*.ts",
     "format": "prettier --write --parser typescript \"src/**/*.ts?(x)\"",
     "build": "rm -rf out/* && esbuild ./src/index.ts --bundle --outfile=out/index.js --external:vscode --format=cjs --platform=node --minify --drop:console",
+    "build2": "rm -rf out/* && esbuild ./src/index.ts --bundle --outfile=out/index.js --external:vscode --format=cjs --platform=node --minify",
     "watch": "tsc -watch -p ./"
   },
   "main": "./out/index.js",
@@ -67,8 +68,8 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "github-copilot-chat-activitybar",
-          "title": "GitHub Copilot Chat",
+          "id": "github-copilot-chat-activitybar-bus",
+          "title": "GitHub Copilot Chat Bus",
           "icon": {
             "Atom One Dark": "Github-Copilot-Chat-Dark.svg",
             "Monokai": "Github-Copilot-Chat-Dark.svg",
@@ -78,19 +79,19 @@
       ]
     },
     "views": {
-      "github-copilot-chat-activitybar": [
+      "github-copilot-chat-activitybar-bus": [
         {
-          "id": "github-copilot-chat-activitybar",
-          "title": "GitHub Copilot Chat",
+          "id": "github-copilot-chat-activitybar-bus",
+          "title": "GitHub Copilot Chat Bus",
           "name": "GitHub Copilot Chat",
           "icon": "Github-Copilot-Chat.svg"
         }
       ]
     },
     "configuration": {
-      "title": "GitHub Copilot",
+      "title": "GitHub Copilot BUS",
       "properties": {
-        "GithubCopilot.status.show": {
+        "GithubCopilotBus.status.show": {
           "type": "string",
           "default": "auto",
           "description": "状态显示",
@@ -105,38 +106,38 @@
             "图标+文本"
           ]
         },
-        "GithubCopilot.editor.enableAutoCompletions": {
+        "GithubCopilotBus.editor.enableAutoCompletions": {
           "type": "boolean",
           "default": true,
           "description": "自动显示行内补全"
         },
-        "GithubCopilot.enable": {
+        "GithubCopilotBus.enable": {
           "type": "string",
           "default": "*=true,plaintext=false,markdown=false,scminput=false",
           "description": "启用或禁用指定语言的自动补全",
           "markdownDescription": "启用或禁用指定[语言](https://code.visualstudio.com/docs/languages/identifiers)的自动补全"
         },
-        "GithubCopilot.proxy.enable": {
+        "GithubCopilotBus.proxy.enable": {
           "type": "boolean",
           "default": false,
           "description": "使用指定HTTP代理服务"
         },
-        "GithubCopilot.proxy.strictSSL": {
+        "GithubCopilotBus.proxy.strictSSL": {
           "type": "boolean",
           "default": true,
           "description": "代理服务使用严格SSL"
         },
-        "GithubCopilot.proxy.host": {
+        "GithubCopilotBus.proxy.host": {
           "type": "string",
           "default": "",
           "description": "HTTP代理地址（主机名:端口）"
         },
-        "GithubCopilot.proxy.user": {
+        "GithubCopilotBus.proxy.user": {
           "type": "string",
           "default": "",
           "description": "HTTP代理用户（用户名:密码）"
         },
-        "GithubCopilot.chat.role": {
+        "GithubCopilotBus.chat.role": {
           "type": "string",
           "default": "copilot",
           "description": "聊天角色限定",
@@ -153,91 +154,91 @@
     },
     "commands": [
       {
-        "command": "copilot.status",
+        "command": "copilot.bus.status",
         "title": "Copilot Status"
       },
       {
-        "command": "copilot.chat.start",
+        "command": "copilot.bus.chat.start",
         "title": "开始代码聊天"
       },
       {
-        "command": "copilot.chat.explain",
+        "command": "copilot.bus.chat.explain",
         "title": "对此进行解释"
       },
       {
-        "command": "copilot.chat.fix",
+        "command": "copilot.bus.chat.fix",
         "title": "修复此"
       },
       {
-        "command": "copilot.chat.generateDocs",
+        "command": "copilot.bus.chat.generateDocs",
         "title": "生成文档"
       },
       {
-        "command": "copilot.chat.generateTests",
+        "command": "copilot.bus.chat.generateTests",
         "title": "生成测试"
       }
     ],
     "submenus": [
       {
-        "id": "copilot.chat",
-        "label": "GitHub Copilot"
+        "id": "copilot.bus.chat",
+        "label": "GitHub Copilot BUS"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "submenu": "copilot.chat",
+          "submenu": "copilot.bus.chat",
           "id": "copilotChatAction",
-          "title": "GitHub Copilot",
-          "group": "1copilotChat@0"
+          "title": "GitHub Copilot BUS",
+          "group": "copy@0"
         },
         {
-          "command": "copilot.chat.start",
+          "command": "copilot.bus.chat.start",
           "group": "copilotChatAction@1"
         },
         {
-          "command": "copilot.chat.explain",
+          "command": "copilot.bus.chat.explain",
           "group": "copilotChatAction@2"
         },
         {
-          "command": "copilot.chat.fix",
+          "command": "copilot.bus.chat.fix",
           "group": "copilotChatAction@3"
         },
         {
-          "command": "copilot.chat.generateDocs",
+          "command": "copilot.bus.chat.generateDocs",
           "group": "copilotChatAction@4"
         },
         {
-          "command": "copilot.chat.generateTests",
+          "command": "copilot.bus.chat.generateTests",
           "group": "copilotChatAction@5"
         }
       ],
-      "copilot.chat": [
+      "copilot.bus.chat": [
         {
-          "command": "copilot.chat.start",
+          "command": "copilot.bus.chat.start",
           "group": "copilotChat@1"
         },
         {
-          "command": "copilot.chat.explain",
+          "command": "copilot.bus.chat.explain",
           "group": "copilotChatAction@1"
         },
         {
-          "command": "copilot.chat.fix",
+          "command": "copilot.bus.chat.fix",
           "group": "copilotChatAction@2"
         },
         {
-          "command": "copilot.chat.generateDocs",
+          "command": "copilot.bus.chat.generateDocs",
           "group": "copilotChatAction@3"
         },
         {
-          "command": "copilot.chat.generateTests",
+          "command": "copilot.bus.chat.generateTests",
           "group": "copilotChatAction@4"
         }
       ]
     },
     "keybindings": [
       {
-        "command": "copilot.chat.start",
+        "command": "copilot.bus.chat.start",
         "key": "ctrl+i",
         "mac": "cmd+i",
         "macosx": "command+i"

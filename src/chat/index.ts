@@ -15,29 +15,29 @@ export function creatChatHandler(prompt?: string) {
 
 export async function activate({ subscriptions }: vscode.ExtensionContext) {
   subscriptions.push(
-    vscode.commands.registerCommand('copilot.chat.start', creatChatHandler()),
+    vscode.commands.registerCommand('copilot.bus.chat.start', creatChatHandler()),
   )
   subscriptions.push(
     vscode.commands.registerCommand(
-      'copilot.chat.explain',
+      'copilot.bus.chat.explain',
       creatChatHandler('对此进行解释'),
     ),
   )
   subscriptions.push(
     vscode.commands.registerCommand(
-      'copilot.chat.fix',
+      'copilot.bus.chat.fix',
       creatChatHandler('修复此'),
     ),
   )
   subscriptions.push(
     vscode.commands.registerCommand(
-      'copilot.chat.generateDocs',
+      'copilot.bus.chat.generateDocs',
       creatChatHandler('生成文档'),
     ),
   )
   subscriptions.push(
     vscode.commands.registerCommand(
-      'copilot.chat.generateTests',
+      'copilot.bus.chat.generateTests',
       creatChatHandler('生成测试'),
     ),
   )

@@ -1,4 +1,4 @@
-# GitHub Copilot for HBuilderX
+# GitHub Copilot for HBuilderX use BUS or TAOBAO
 
 Your AI pair programmer
 
@@ -10,16 +10,53 @@ GitHub Copilot 使用 OpenAI Codex 从你的编辑器实时建议代码和整个
 
 要了解更多 GitHub Copilot 信息，请访问 [https://github.com/features/copilot](https://github.com/features/copilot).
 
-## 订阅
+## 关于本仓库
 
-GitHub Copilot 需要[订阅](https://github.com/github-copilot/signup)。它对经过认证的学生和 GitHub 上流行的开源项目的维护者是免费的。
+forked from [zhetengbiji/copilot-for-hbuilderx](https://github.com/zhetengbiji/copilot-for-hbuilderx)
 
-GitHub Copilot 受 [GitHub 附加产品条款](https://docs.github.com/en/site-policy/github-terms/github-terms-for-additional-products-and-features)的约束。
+基于以上仓库，做出了一些调整: 以支持国内`“公车”`或`"淘宝"`版本。
+
+> 本想着在原仓库提PR，但考虑到`“公车”`或`"淘宝"`版本使用和正版使用出现未知的问题。所以fork后并重新上传新插件。
+
 
 ## 使用方式
 
 1. 从 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241)下载并导入本插件。
-2. 点击 HBuilderX 右下角 GitHub Copilot 图标进行登录，登录后在编辑代码时 GitHub Copilot 会自动给出建议。
+2. 编辑配置模板 bus-hosts.json 到对应目录
+
+> win:    C:\Users\user\AppData\Local\github-copilot\bus-hosts.json
+> other:  ~/.config/github-copilot/bus-hosts.json
+
+```json
+{
+    "github.com": {
+        "user": "UserName",
+        "oauth_token": "公车或者淘宝买的授权 获取到的token",
+        "dev_override": {
+            "copilot_token_url": "公车或者淘宝买的授权 API地址/copilot_internal/v2/token"
+        }
+    }
+}
+```
+
+3. 编辑环境变量
+
+> win: 系统->系统属性->环境变量
+> mac: ~/.bash_profile
+
+```js
+{
+    CODESPACES: true,
+    GITHUB_API_URL: "xxxx", // 公车  或者淘宝授权 激活插件 会生成
+    GITHUB_SERVER_URL: "https://github.com",
+    GITHUB_TOKEN: "xxxx", // 公车  或者淘宝授权 激活插件 会生成
+}
+```
+
+4. 点击 HBuilderX 右下角 GitHub Copilot 图标查看状态。正常即可正常使用。有时网络稍慢，多测试几次、或者试试聊天功能。
+
+
+## 快捷键
 
 - 接受建议： `Tab 键`
 - 拒绝建议： `Esc 键`
@@ -29,16 +66,7 @@ GitHub Copilot 受 [GitHub 附加产品条款](https://docs.github.com/en/site-p
   - 点击右下角 GitHub Copilot 图标 -> `开始代码聊天`
   - 编辑区选中代码右键，选择菜单 `GitHub Copilot` -> `开始代码聊天`
 
-## 注意事项
 
-- 首次安装后，如使用出现异常，可以尝试重启 HBuilderX。
-- 卸载或者升级失败，可以尝试重启 HBuilderX。
-- 部分地区访问 GitHub Copilot 较慢，可以尝试使用网络代理。
-- GitHub Copilot Chat 为实验性功能，交互方式有待优化。
-
-## 问题反馈与使用交流
-
-- QQ 群：[697588509](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=AhzmBLdzgZD6Xcx7ry-kt_DtZKTt_yws&authKey=nEpQOU7P9J7WMbTf85TIAAeQqosVWsT5SAhzQ7OkwGsugFLdRqo6nKCIWV03Urw6&noverify=0&group_code=697588509)
 
 ## 支持本项目
 
@@ -46,5 +74,27 @@ GitHub Copilot 受 [GitHub 附加产品条款](https://docs.github.com/en/site-p
 
 * 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241) 下载本插件或真心评价。
 * 在 [GitHub 开源仓库](https://github.com/zhetengbiji/copilot-for-hbuilderx) 给予 Star 或贡献有效代码。
-* 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241) 或 [爱发电](https://afdian.net/a/zhetengbiji) 进行赞助。
-* 在 [QQ 交流群](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=AhzmBLdzgZD6Xcx7ry-kt_DtZKTt_yws&authKey=nEpQOU7P9J7WMbTf85TIAAeQqosVWsT5SAhzQ7OkwGsugFLdRqo6nKCIWV03Urw6&noverify=0&group_code=697588509) 帮助其他开发者解答使用中遇到的问题。
+* 在 [HBuilderX 插件市场](https://ext.dcloud.net.cn/plugin?id=15241) 进行赞助。
+
+## 沟通交流
+
+如果你知道某宝买哪个，可私信或加我沟通交流。
+
+<table>
+<tr>
+<td><img src="./assets/wechat1.jpg" style="height:200px"></img></td>
+<td><img src="./assets/wechat2.jpg" style="height:200px"></img></td>
+</tr>
+<tr>
+<td style="text-align:center">微信</td>
+<td style="text-align:center">公众号: 不简说</td>
+</tr>
+
+</table>
+
+
+## 参考与学习
+
+* [zhetengbiji/copilot-for-hbuilderx](https://github.com/zhetengbiji/copilot-for-hbuilderx)
+* [Copilot.vim](https://github.com/github/copilot.vim) 
+* 感谢原插件作者[zhetengbiji](https://github.com/zhetengbiji)

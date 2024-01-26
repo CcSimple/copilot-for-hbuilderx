@@ -234,7 +234,7 @@ function registerInlineCompletionItemProvider(
       'verilog',
       'wxml',
     ])
-  const enableSelector = config.get<string>('GithubCopilot.enable') || ''
+  const enableSelector = config.get<string>('GithubCopilotBus.enable') || ''
   selector.length = 0
   selectorCache.clear()
   enableSelector.split(',').forEach(item => {
@@ -289,15 +289,13 @@ function registerInlineCompletionItemProvider(
           const items: vscode.InlineCompletionItem[] = []
           const config = vscode.workspace.getConfiguration()
           const enableAutoCompletions = config.get(
-            'GithubCopilot.editor.enableAutoCompletions',
+            'GithubCopilotBus.editor.enableAutoCompletions',
           )
           if (
-            !(
-              (enableAutoCompletions &&
-                context.triggerKind ===
-                  vscode.InlineCompletionTriggerKind.Automatic) ||
-              context.triggerKind === vscode.InlineCompletionTriggerKind.Invoke
-            )
+            (enableAutoCompletions &&
+              context.triggerKind ===
+                vscode.InlineCompletionTriggerKind.Automatic) ||
+            context.triggerKind === vscode.InlineCompletionTriggerKind.Invoke
           ) {
             return { items }
           }
@@ -471,14 +469,14 @@ export async function activate({ subscriptions }: vscode.ExtensionContext) {
   registerInlineCompletionItemProvider(subscriptions)
   subscriptions.push(
     vscode.workspace.onDidChangeConfiguration(function (event) {
-      if (event.affectsConfiguration('GithubCopilot.enable')) {
+      if (event.affectsConfiguration('GithubCopilotBus.enable')) {
         registerInlineCompletionItemProvider(subscriptions)
       }
       if (
-        event.affectsConfiguration('GithubCopilot.proxy.enable') ||
-        event.affectsConfiguration('GithubCopilot.proxy.host') ||
-        event.affectsConfiguration('GithubCopilot.proxy.user') ||
-        event.affectsConfiguration('GithubCopilot.proxy.strictSSL')
+        event.affectsConfiguration('GithubCopilotBus.proxy.enable') ||
+        event.affectsConfiguration('GithubCopilotBus.proxy.host') ||
+        event.affectsConfiguration('GithubCopilotBus.proxy.user') ||
+        event.affectsConfiguration('GithubCopilotBus.proxy.strictSSL')
       ) {
         isEditorInfoChanged = true
       }

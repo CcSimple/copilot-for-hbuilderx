@@ -137,7 +137,7 @@ export function show() {
 
   const htmlContent = initVar(fs.readFileSync(HTML_PATH, 'utf-8'))
   webviewPanel = vscode.window.createWebviewPanel(
-    'github-copilot-chat-activitybar',
+    'github-copilot-chat-activitybar-bus',
     name,
     vscode.ViewColumn.One,
     {
